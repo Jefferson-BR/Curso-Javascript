@@ -1,1 +1,1 @@
-# Curso-Javascript
+# Backup dos estudos em JS
