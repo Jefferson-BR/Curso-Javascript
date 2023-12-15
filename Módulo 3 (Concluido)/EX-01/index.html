@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+
+    Velocidade do carro: <input type="text" name="velo" id="velo">
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="resultado">
+
+    </div>
+
+    <h2>Verificação de Nacionalidade</h2>
+    <label>Informe de qual pais você é: </label>
+    <input type="text" name="pais" id="pais">
+    <input type="button" value="Consultar" onclick="consulta()">
+    <div id="saida"></div>
+
+    <script>
+        function calcular(e){
+            var velocidade = document.querySelector('input#velo')
+            var resultado = document.querySelector('div#resultado')
+            var vel = Number(velocidade.value)
+            resultado.innerHTML = `<p>Sua velocidade atual é de <strong>${vel}Km/h</strong></p>`
+            if (vel > 60){ // Condição simples
+                resultado.innerHTML += `<p>Você foi <strong>Multado</strong> por excesso de velocidade!</p>`
+            }
+            resultado.innerHTML += `<p>Dirija sempre com cinto de segurança!</p>`
+        }
+
+        function consulta(e){
+            var nacionalidade = document.querySelector('input#pais')
+            var saida = document.querySelector('div#saida')
+            saida.innerHTML = `<p>Seu pais de origem é: <strong>${nacionalidade.value}</strong></p>`
+
+            if(nacionalidade.value.toLowerCase() === 'brasil'){
+                saida.innerHTML += `Portanto Você é Brasileiro!`
+            }
+            else{
+                saida.innerHTML += `Portanto Você é Estrangeiro!`
+            }
+        }
+    </script>
+</body>
+</html>
