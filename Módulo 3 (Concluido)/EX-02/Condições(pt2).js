@@ -11,7 +11,7 @@ var IdadeVotacao = Number(prompt("Qual a sua idade? Digite: "))
 }
 
 var data = new Date()
-var coleta = data.getDate() + "-" + (data.getMonth() + 1) + "-" + data.getFullYear() + " " + data.getHours() + ":" + data.getMinutes().toString().padStart(2, '0')
+var coleta = data.getDate() + "-" + (data.getMonth() + 1) + "-" + data.getFullYear() + " " + data.getHours().toString().padStart(2, '0') + ":" + data.getMinutes().toString().padStart(2, '0')
 console.log(`A data de hoje é: ${coleta}`)
 
 
